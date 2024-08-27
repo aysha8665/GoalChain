@@ -1,5 +1,5 @@
 # 🏗 GoalChain
-# DApp for Goal Setting, Achievement Celebration, and NFT Minting
+DApp for Goal Setting, Achievement Celebration, and NFT Minting
 
 ## Overview
 

@@ -41,6 +41,12 @@ const config: HardhatUserConfig = {
     // View the networks that are pre-configured.
     // If the network you are looking for is not here you can add new network settings
     hardhat: {
+      accounts: [
+        {
+          privateKey: "0x7d5bdd24c11080a2795b98a908df89c5fd43d1910a37263efac2b0f56132cd85", // Your private key
+          balance: "10000000000000000000000", // 10,000 ETH
+        },
+      ],
       forking: {
         url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",

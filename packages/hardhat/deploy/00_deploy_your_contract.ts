@@ -3,12 +3,12 @@ import { DeployFunction } from "hardhat-deploy/types";
 import { Contract } from "ethers";
 
 /**
- * Deploys a contract named "GoalContract" using the deployer account and
+ * Deploys a contract named "GoalChain" using the deployer account and
  * constructor arguments set to the deployer address
  *
  * @param hre HardhatRuntimeEnvironment object.
  */
-const deployGoalContract: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+const deployGoalChain: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   /*
     On localhost, the deployer account is the one that comes with Hardhat, which is already funded.
 
@@ -22,7 +22,7 @@ const deployGoalContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
-  await deploy("GoalContract", {
+  await deploy("GoalChain", {
     from: deployer,
     // Contract constructor arguments
     args: [],
@@ -33,12 +33,12 @@ const deployGoalContract: DeployFunction = async function (hre: HardhatRuntimeEn
   });
 
   // Get the deployed contract to interact with it after deploying.
-  const goalContract = await hre.ethers.getContract<Contract>("GoalContract", deployer);
-  console.log("👋 Initial Goal Count:", await goalContract.goalCount());
+  const goalChain = await hre.ethers.getContract<Contract>("GoalChain", deployer);
+  console.log("👋 Initial Goal Count:", await goalChain.goalCount());
 };
 
-export default deployGoalContract;
+export default deployGoalChain;
 
 // Tags are useful if you have multiple deploy files and only want to run one of them.
-// e.g. yarn deploy --tags GoalContract
-deployGoalContract.tags = ["GoalContract"];
+// e.g. yarn deploy --tags GoalChain
+deployGoalChain.tags = ["GoalChain"];
